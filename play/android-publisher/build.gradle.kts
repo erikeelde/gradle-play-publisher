@@ -18,6 +18,9 @@ dependencies {
     testImplementation(testLibs.junit.engine)
     testImplementation(testLibs.truth)
     testImplementation(testLibs.mockito)
+
+    testFixturesImplementation(testLibs.api.client)
+    testFixturesImplementation(testLibs.http.client)
 }
 
 // Mockito needs to be able to pass in null params
