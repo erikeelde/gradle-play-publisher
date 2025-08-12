@@ -1,3 +1,17 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google().content {
+            includeGroup("com.android")
+            includeGroupByRegex("com\\.android\\..*")
+            includeGroupByRegex("com\\.google\\..*")
+            includeGroupByRegex("androidx\\..*")
+        }
+        mavenCentral()
+    }
+
+}
+
 plugins {
     `gradle-enterprise`
 }
@@ -73,6 +87,9 @@ dependencyResolutionManagement {
                 .versionRef("junit")
             library("truth", "com.google.truth", "truth").versionRef("truth")
             library("mockito", "org.mockito", "mockito-core").versionRef("mockito")
+            library("api-client", "com.google.api-client", "google-api-client").version("2.2.0")
+            library("http-client", "com.google.http-client", "google-http-client-gson")
+                .version("1.43.3")
         }
     }
 }
